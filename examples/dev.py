@@ -1,73 +1,71 @@
-from collections import OrderedDict
-import json
+#Different Types of Creating Integers [maximum ways]
+#Single Variable
+a=100
+print(a)
+#Multiple Variable
 
+#method 1
+a=100
+b=32
+print(a,b)
 
-class JSONHandler:
+#method 2
+a,b = 12,34
+print(a,b)
 
-    filter_keys = ["symbol", "shortName", "longName", "address1", "address2", "city",
-                   "country", "exchange", "exchangeTimezoneName", "phone"]
+#From list
+a = [21,324,5467,6,36,35,32]
+print(a[4])
+#From Tuple
+a = (21,324,5467,6,36,35,32)
+print(a[2])
 
-    def __init__(self, input_path: str, output_path: str):
-        self.input_file_path = input_path
-        self.output_file_path = output_path
+#Swapping
 
-    def read_json(self):
-        try:
-            with open(self.input_file_path, "r") as file_stream:
-                data_dict = json.load(file_stream)
-            return data_dict
-        except Exception as e:
-            raise e
+#Swap 2 integers
+a=12
+b=43
+a,b = b,a
+print(a,b)
 
-    def write_json(self, json_data: dict):
-        try:
-            output_file_path = self.output_file_path.format(json_data["shortName"])
-            with open(output_file_path, "w") as file_stream:
-                json.dump(json_data, file_stream, indent=4)
-        except Exception as e:
-            raise e
+#Swap 3 Integers
 
-    def filter_records(self, json_data: dict):
-        try:
-            return {elem: json_data[elem] for elem in self.filter_keys}
-        except Exception as e:
-            raise e
+def swapThree(a, b, c):
 
-    def run_model(self):
-        try:
-            # Stage - 1: Read Data
-            company_info = self.read_json()
+    a = a + b + c
+    b = a - (b + c)
+    c = a - (b + c)
+    a = a - (b + c)
+    print("After swapping a =", a, ", b =", b, ", c =", c)
 
-            # Stage - 2: Filter Records
-            filtered_company = self.filter_records(json_data=company_info)
+if __name__ == '__main__':
+    a = 10
+    b = 20
+    c = 30
+    print("Before swapping a =", a, ", b =", b, ", c =", c)
+    swapThree(a, b, c)
 
-            # Stage - 3: Write Output
-            self.write_json(json_data=filtered_company)
-        except Exception as e:
-            raise e
+# Duplicate Given Integer "19930622"
+a=19930622
+print((str(a)+' ') * 3)
 
+#Integer Reverse
+num =19930622
+print(str(num)[::-1])
 
-if __name__ == "__main__":
+#Convert list of integers to integers
+a = [9, 6, 8, 8, 5, 1, 4, 4, 4, 3]
+for i in a:
+    print(i, end="")
+print("")
 
-    input_path = "D:\\Github\\PYTHON-TRAINING\\dataset\\INFO.json"
-    output_path = "D:\\Github\\PYTHON-TRAINING\\dataset\\output\\{}.json"
+#Sort Integer
+a=[0,9,8,7,6,1,2,3,4,5]
+a.sort()
+print(a)
 
-    handler = JSONHandler(input_path=input_path, output_path=output_path)
-    handler.run_model()
+#spliting integers
 
-    # data_dict = dict()
-    # file_path = "D:\\Github\\PYTHON-TRAINING\\dataset\\INFO.json"
-    # output_path = "D:\\Github\\PYTHON-TRAINING\\dataset\\output\\{}.json"
-    # # Stage - 1: [Reading]
-    # with open(file_path, "r") as file_stream:
-    #     data_dict = json.load(file_stream)
-    #
-    # # Stage - 2: Filter
-    # filter_keys = ["symbol", "shortName", "longName", "address1", "address2", "city",
-    #                "country", "exchange", "exchangeTimezoneName", "phone"]
-    # result = {elem: data_dict[elem] for elem in filter_keys}
-    #
-    # # Stage - 3: File Writing
-    # output_file_path = output_path.format(result["shortName"])
-    # with open(output_file_path, "w") as file_stream:
-    #     json.dump(result, file_stream, indent=4)
+a=[9688514443]
+b= list(map(int, str(a[0])))
+print(b)
