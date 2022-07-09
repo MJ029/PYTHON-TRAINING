@@ -1,0 +1,12 @@
+﻿ID,Frist Name,Last Name,Gender,Phone No,Mail ID,Designation,Grade,Manager,Created By,Created Date,Modified By,Modified Date,is active
+EMP0001,Manikandan,Jeyabal,M,9874563210,Manikandan.X@gmail.com,Data Engineer,8,EMP0011,adminuser,05-07-2022,,,Y
+EMP0002,Senthil,Kumar,M,9574368451,Senthil.Kumar.S10@gmail.com,Senior Data Engineer,8,EMP0003,adminuser,05-07-2022,,,Y
+EMP0003,Surya,Yadhav,M,7549135876,Surya.E.Yadhav@gmail.com,Lead Data Engineer,7,EMP0005,adminuser,05-07-2022,,,Y
+EMP0004,Yogesh,Ramesh Kumar,M,9435871640,Yogesh.Ramesh@gmail.com,Data Engineer,8,EMP0003,adminuser,05-07-2022,,,Y
+EMP0005,Tamil,Selvan,M,9574368451,Tamil.Selvan@gmail.com,Manager,6,EMP0006,adminuser,05-07-2022,,,Y
+EMP0006,Pandian,Muthalvan,M,7549135876,Pandian.Muthalvan@gmail.com,VP,5,EMP0007,adminuser,05-07-2022,,,Y
+EMP0007,Mani ,Ranjan,M,9435871640,Mani.Ranjan@gmail.com,Precident,4,EMP0008,adminuser,05-07-2022,,,Y
+EMP0008,Iswarya,Kumari,F,9004567610,Iswarya.Kumari@gmail.com,CTO,3,EMP0009,adminuser,05-07-2022,,,Y
+EMP0009,Arya,Agarwal,F,9004567610,Arya.Agarwal@gmail.com,CFO,2,EMP0010,adminuser,05-07-2022,,,Y
+EMP0010,Eswari,Ammal,F,9004567610,Eswari.Ammal@gmail.com,CEO,1,,adminuser,05-07-2022,,,Y
+EMP0011,Raman,Sundharan,M,6584156461,Raman.sundharan@gfail.cof,Manager,6,EMP0006,adminuser,05-07-2022,,,Y
