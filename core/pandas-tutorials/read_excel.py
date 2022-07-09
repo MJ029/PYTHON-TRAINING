@@ -1,16 +1,15 @@
-import pandas as pd
+#first row and column
+import openpyxl
 
-if __name__ == "__main__":
 
-    file_path = "../../dataset/File-Handling/Excel-Reading/Data-Generation.xlsx"
+path = "../../dataset/File-Handling/Excel-Reading/Data-Generation.xlsx"
 
-    Excel_reading = pd.ExcelFile(file_path)
-    df1 = pd.read_excel(Excel_reading, 'EMPLOYEE-MASTER')
-    df2 = pd.read_excel(Excel_reading, 'CLAIMS-MASTER')
-    df3 = pd.read_excel(Excel_reading, 'SALARY-HISTORY')
-    df4 = pd.read_excel(Excel_reading, 'CLAIMS-HISTORY')
+wb_obj = openpyxl.load_workbook(path)
 
-    print(df1)
-    print(df2)
-    print(df3)
-    print(df4)
+sheet_obj = wb_obj.active
+
+cell_obj =sheet_obj.cell(row = 1, column = 1)
+
+print(cell_obj.value)
+
+
