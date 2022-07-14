@@ -1,21 +1,11 @@
+import pandas as pd
 import json
-from pandas import json_normalize
 
-#Create pandas dataframe from JSON
+#convert CSV to JSON file
 
-Data = '''
-{
-"Matches":
-         [
-         { "Player": "Surya", "Runs": 22,"Wickets":"4"},
-         { "Player": "Rahul","Runs": 25,"Wickets":"3"},
-         { "Player": "Ashok", "Runs": 23,"Wickets":"5"}
-         ],
-"status": ["ok"]
-}
-'''
-print(Data)
+df = pd.read_csv ("../../dataset/File-Handling/CSV-Reading/Employee-Master/Employee-Master.csv")
 
-dict = json.loads(Data)
-df2 = json_normalize(dict['Matches'])
-print(df2)
+json_file = json.dumps(f"{df}", sort_keys=False)
+
+print(json_file)
+
