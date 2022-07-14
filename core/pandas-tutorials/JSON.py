@@ -1,11 +1,27 @@
 import pandas as pd
-import json
+import os
 
-#convert CSV to JSON file
+def create_non_existing_dir(dir_path=str):
+    abs_path = os.path.abspath(dir_path)
+    os.makedirs(abs_path)
+    return abs_path
 
-df = pd.read_csv ("../../dataset/File-Handling/CSV-Reading/Employee-Master/Employee-Master.csv")
+#convert csv to Excel file
 
-json_file = json.dumps(f"{df}", sort_keys=False)
+file_path = "../../dataset/File-Handling/CSV-Reading/Claims-History/Claims-History.csv"
+target_path ="../../dataset/output"
+file_name = "Claims-History"
+excel_filename = "Claims-History.xlsx"
 
-print(json_file)
 
+if __name__ == "__main__":
+
+    df = pd.read_csv(file_path)
+
+    target_file_path = "/".join([target_path,"CSV-EXCEL", file_name])
+
+    target_file_abs_path = create_non_existing_dir(dir_path=target_file_path)
+
+    complete_file_path = "/".join([target_file_abs_path, f"{file_name}.xlsx"])
+
+    df.to_excel(complete_file_path,index=False)
