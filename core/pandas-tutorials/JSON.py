@@ -6,22 +6,19 @@ def create_non_existing_dir(dir_path=str):
     os.makedirs(abs_path)
     return abs_path
 
-#convert csv to Excel file
+#convert Excel to JSON file
 
-file_path = "../../dataset/File-Handling/CSV-Reading/Claims-History/Claims-History.csv"
-target_path ="../../dataset/output"
+file_path = "../../dataset/File-Handling/Excel-Reading/Data-Generation.xlsx"
+target_path = "../../dataset/output"
 file_name = "Claims-History"
-excel_filename = "Claims-History.xlsx"
 
+df = pd.read_excel(file_path, sheet_name='CLAIMS-HISTORY')
 
-if __name__ == "__main__":
+target_file_path = "/".join([target_path, "EXCEL-JSON", file_name])
 
-    df = pd.read_csv(file_path)
+target_file_abs_path = create_non_existing_dir(dir_path=target_file_path)
 
-    target_file_path = "/".join([target_path,"CSV-EXCEL", file_name])
+complete_file_path = "/".join([target_file_abs_path, f"{file_name}.json"])
 
-    target_file_abs_path = create_non_existing_dir(dir_path=target_file_path)
+df.to_json(complete_file_path)
 
-    complete_file_path = "/".join([target_file_abs_path, f"{file_name}.xlsx"])
-
-    df.to_excel(complete_file_path,index=False)
