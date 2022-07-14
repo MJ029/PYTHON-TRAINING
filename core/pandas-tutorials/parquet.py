@@ -6,20 +6,21 @@ def create_non_existing_dir(dir_path=str):
     os.makedirs(abs_path)
     return abs_path
 
-#convert csv to parquet file
+#convert excel to parquet file
 
-file_path = "../../dataset/File-Handling/CSV-Reading/Claims-History/Claims-History.csv"
+file_path = "../../dataset/File-Handling/Excel-Reading/Data-Generation.xlsx"
 target_path = "../../dataset/output"
 file_name = "Claims-History"
 
 if __name__ == "__main__":
 
-    df = pd.read_csv(file_path)
+    df = pd.read_excel(file_path, sheet_name="CLAIMS-HISTORY")
 
-    target_file_path = "/".join([target_path, "CSV-PARQUET"])
+    target_file_path = "/".join([target_path, "EXCEL-PARQUET"])
 
-    target_file_abs_path = create_non_existing_dir(dir_path=target_file_path)
+    target_file_abs_path = create_non_existing_dir(dir_path = target_file_path)
 
-    complete_file_path = "/".join([target_file_abs_path, f"{file_name}.parquet"])
+    complete_path = "/".join([target_file_abs_path,f"{file_name}.parquet"])
 
-    df.to_parquet(complete_file_path, index=False)
+    df.to_parquet(complete_path)
+
