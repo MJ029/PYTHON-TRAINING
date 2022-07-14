@@ -1,9 +1,15 @@
 import pandas as pd
 
-#Reading CSV file
+#Reading multiple CSV file
 
-file_path = "../../dataset/File-Handling/CSV-Reading/Employee-Master/Employee-Master.csv"
+file_path = "../../dataset/File-Handling/CSV-Reading"
+file_names = ["Claims-History", "Claims-Master", "Employee-Master", "Salary-History"]
 
-df = pd.read_csv(file_path)
+for file_name in file_names:
 
-print(df)
+    print(f"Running File: {file_name}")
+
+    df = pd.read_csv(file_path + f"/{file_name}" + f"/{file_name}.csv")
+    df.to_parquet
+
+    print(df)
