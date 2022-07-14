@@ -1,15 +1,11 @@
 import pandas as pd
 
-#Reading multiple CSV file
+#Filter NA records and write as CSV file
 
-file_path = "../../dataset/File-Handling/CSV-Reading"
-file_names = ["Claims-History", "Claims-Master", "Employee-Master", "Salary-History"]
+file_path = "../../dataset/File-Handling/CSV-Reading/Employee-Master/Employee-Master.csv"
 
-for file_name in file_names:
+df = pd.read_csv(file_path)
 
-    print(f"Running File: {file_name}")
+cleansed_df = df.dropna(axis = 0, how='all')
 
-    df = pd.read_csv(file_path + f"/{file_name}" + f"/{file_name}.csv")
-    df.to_parquet
-
-    print(df)
+print(cleansed_df)
