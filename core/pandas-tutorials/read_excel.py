@@ -1,15 +1,11 @@
-#first row and column
-import openpyxl
+import pandas as pd
 
+#Read Excel file
 
-path = "../../dataset/File-Handling/Excel-Reading/Data-Generation.xlsx"
+file_path = "../../dataset/File-Handling/Excel-Reading/Data-Generation.xlsx"
 
-wb_obj = openpyxl.load_workbook(path)
+Excel_reading = pd.ExcelFile(file_path)
 
-sheet_obj = wb_obj.active
+df = pd.read_excel(Excel_reading, 'EMPLOYEE-MASTER')
 
-cell_obj =sheet_obj.cell(row = 1, column = 1)
-
-print(cell_obj.value)
-
-
+print(df)
