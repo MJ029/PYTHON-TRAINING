@@ -1,0 +1,45 @@
+******************************* JSON.PY *******************************
+- 4: follow PIP Standards
+- 9: follow PIP Standards
+- 11: follow PIP Standards
+- 4: Function must check for directory existence first then it should create the target directory:
+    SUDO-CODE:
+        - STEP-1: Get Input Directory
+        - STEP-2: Check It Directory Exists
+        - STEP-3: IF Directory Not Exists, THEN Create Directory and return ABS path.
+        - STEP-4: If Directory Exists, Then Return ABS path.
+- 23: Format JSON to structure instead flat line and write it to target dir
+- Note: Run everything inside __main__ function.
+
+
+******************************* Numpy.PY *******************************
+- 5: follow PIP Standards.
+- 7: follow PIP Standards.
+- 8: follow PIP Standards.
+- 9: follow PIP Standards.
+
+******************************* parquet.PY *******************************
+- 4: follow PIP Standards
+- 9: follow PIP Standards
+- 11: follow PIP Standards
+- 4: Function must check for directory existence first then it should create the target directory:
+    SUDO-CODE:
+        - STEP-1: Get Input Directory
+        - STEP-2: Check It Directory Exists
+        - STEP-3: IF Directory Not Exists, THEN Create Directory and return ABS path.
+        - STEP-4: If Directory Exists, Then Return ABS path.
+
+******************************* read-csv.PY *******************************
+- 3: follow PIP standards.
+- 9: follow PIP standards.
+
+******************************* read_excel.PY *******************************
+- 3: follow PIP standards.
+
+
+Note:
+    Do the same for Multiple-Files, like reading and writing multiple files from given directory
+        - CSV to PARQUET
+        - CSV to EXCEL
+        - EXCEL to CSV
+        - CSV to JSON
