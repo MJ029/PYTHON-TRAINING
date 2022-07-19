@@ -11,20 +11,25 @@ def create_non_existing_dir(dir_path: str):
         os.makedirs(abs_path)
         return abs_path
 
+    os.makedirs(abs_path)
+    return abs_path
 
-# convert Excel to JSON file
+
+# convert excel to parquet file
 file_path = "../../dataset/File-Handling/Excel-Reading/Data-Generation.xlsx"
 
 target_path = "../../dataset/output"
 
 file_name = "Claims-History"
 
-df = pd.read_excel(file_path, sheet_name='CLAIMS-HISTORY')
+if __name__ == "__main__":
 
-target_file_path = "/".join([target_path, "EXCEL-JSON", file_name])
+    df = pd.read_excel(file_path, sheet_name="CLAIMS-HISTORY")
 
-target_file_abs_path = create_non_existing_dir(dir_path=target_file_path)
+    target_file_path = "/".join([target_path, "EXCEL-PARQUET"])
 
-complete_file_path = "/".join([target_file_abs_path, f"{file_name}.json"])
+    target_file_abs_path = create_non_existing_dir(dir_path=target_file_path)
 
-df.to_json(complete_file_path)
+    complete_path = "/".join([target_file_abs_path, f"{file_name}.parquet"])
+
+    df.to_parquet(complete_path)
