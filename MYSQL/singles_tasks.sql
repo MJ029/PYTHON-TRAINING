@@ -5,12 +5,12 @@ USE sql_learning;
 SELECT 
   ID
   ,Recency
-  martial_status,
+  ,martial_status,
   
   DENSE_RANK() OVER (
     ORDER BY 
       Recency DESC
-  ) TOP_3_customers 
+  ) AS TOP_3_customers 
 FROM 
   customer_campaign
 WHERE
