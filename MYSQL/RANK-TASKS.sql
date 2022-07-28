@@ -4,7 +4,7 @@ SELECT
   DENSE_RANK() OVER (
     ORDER BY 
       Income
-  ) TOP_3_RANK 
+  ) LAST_3_RANK 
 FROM 
   customer_campaign 
 LIMIT 
