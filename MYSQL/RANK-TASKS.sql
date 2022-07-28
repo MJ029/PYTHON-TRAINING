@@ -9,6 +9,8 @@ FROM
   customer_campaign 
 LIMIT 
   3;
+  
+  
 SELECT 
   ID, 
   Income, 
