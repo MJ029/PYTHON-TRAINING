@@ -2,17 +2,31 @@ USE sql_learning;
 
 DROP TABLE IF EXISTS customer_campaign;
 
+			----- [1] -----
+
 CREATE TABLE If NOT EXISTS customer_campaign AS 
 
 SELECT 
   c.ID, 
+  
+			----- [3] -----
+  
   STR_TO_DATE(c.Dt_customer, '%d-%m-%Y') AS join_date, 
+
+			----- [5] -----
+
   STR_TO_DATE(
     CONCAT(c.Year_Birth, '-01-01'), 
     '%Y-%m-%d'
-  ) AS YOB, 
+  ) AS YOB,
+  
+			----- [6] -----
+  
   TRIM(c.Education) AS education,
   TRIM(c.Marital_Status) AS martial_status,
+  
+			----- [4] -----
+  
   CAST(
     c.Income AS DECIMAL(28, 2)
   ) AS Income 
@@ -38,7 +52,7 @@ SELECT
 ,r.AcceptedCmp5 
 ,r.Response 
 FROM 
-  customer_details AS c 
+  customer_details AS c             
   JOIN places_details AS p ON c.ID = p.ID 
   JOIN product_details AS q ON c.ID = q.ID 
   JOIN promotions_details AS r ON c.ID = r.ID;
