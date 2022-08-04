@@ -56,3 +56,6 @@ FROM
   JOIN places_details AS p ON c.ID = p.ID 
   JOIN product_details AS q ON c.ID = q.ID 
   JOIN promotions_details AS r ON c.ID = r.ID;
+
+
+
