@@ -13,7 +13,7 @@ def create_non_existing_dir(dir_path: str):
     return abs_path
 
 
-file_name = "8"
+file_name = "9"
 target_path = "../../PANDAS_SQL"
 
 
@@ -21,7 +21,7 @@ if __name__ == "__main__":
 
     connection = ctr.connect(user='root', host='localhost', password='blackforest', database='sql_learning')
 
-    query = "SELECT ID, join_date FROM customer_campaign WHERE join_date <= '2013-01-01';"
+    query = "SELECT ID, join_date FROM customer_campaign WHERE join_date >='2014-01-01';"
 
     df = pd.read_sql(sql=query,con=connection)
 
