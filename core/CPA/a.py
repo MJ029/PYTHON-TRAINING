@@ -13,7 +13,7 @@ def create_non_existing_dir(dir_path: str):
     return abs_path
 
 
-file_name = "12"
+file_name = "13"
 target_path = "../../PANDAS_SQL"
 
 
@@ -21,7 +21,7 @@ if __name__ == "__main__":
 
     connection = ctr.connect(user='root', host='localhost', password='blackforest', database='sql_learning')
 
-    query = "SELECT ID, martial_status, Teenhome FROM customer_campaign WHERE martial_status ='married' AND Teenhome >=1;"
+    query = "SELECT ID, Recency, martial_status, DENSE_RANK() OVER ( ORDER BY Recency DESC ) AS TOP_3_customers FROM customer_campaign WHERE martial_status = 'Single' LIMIT 3;"
 
     df = pd.read_sql(sql=query,con=connection)
 
