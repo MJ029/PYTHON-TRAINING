@@ -13,7 +13,7 @@ def create_non_existing_dir(dir_path: str):
     return abs_path
 
 
-file_name = "20[AcceptedCmp2]"
+file_name = "20[AcceptedCmp3]"
 target_path = "../../PANDAS_SQL"
 
 
@@ -21,7 +21,7 @@ if __name__ == "__main__":
 
     connection = ctr.connect(user='root', host='localhost', password='blackforest', database='sql_learning')
 
-    query = "SELECT COUNT(ID) as customers, AcceptedCmp2, MntMeatProducts, MntFishProducts, MntSweetProducts, MntGoldProds FROM customer_campaign GROUP BY AcceptedCmp2;"
+    query = "SELECT COUNT(ID) as customers, AcceptedCmp3, MntMeatProducts, MntFishProducts, MntSweetProducts, MntGoldProds FROM customer_campaign GROUP BY AcceptedCmp3;"
 
     df = pd.read_sql(sql=query,con=connection)
 
